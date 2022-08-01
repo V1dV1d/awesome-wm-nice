@@ -168,6 +168,8 @@ _private.maximize_color = "#4CBB17"
 _private.floating_color = "#f6a2ed"
 _private.ontop_color = "#f6a2ed"
 _private.sticky_color = "#f6a2ed"
+
+_private.bottom_rounding_radius = 4
 -- ------------------------------------------------------------
 
 -- => Saving and loading of color rules
@@ -586,8 +588,8 @@ local function add_window_shade(c, src_top, src_bottom)
     w.shape = shapes.rounded_rect {
         tl = _private.titlebar_radius,
         tr = _private.titlebar_radius,
-        bl = 4,
-        br = 4,
+        bl = _private.bottom_rounding_radius,
+        br = _private.bottom_rounding_radius,
     }
     -- Need to use a manual layout because layout fixed seems to introduce a thin gap
     src_top.point = {x = 0, y = 0}
@@ -851,8 +853,8 @@ function _private.add_window_decorations(c)
                     c.shape = shapes.rounded_rect {
                         tl = _private.titlebar_radius,
                         tr = _private.titlebar_radius,
-                        bl = 4,
-                        br = 4,
+                        bl = _private.bottom_rounding_radius,
+                        br = _private.bottom_rounding_radius,
                     }
                 end
             end)
@@ -877,8 +879,8 @@ function _private.add_window_decorations(c)
 				c.shape = shapes.rounded_rect {
 					tl = _private.titlebar_radius,
 					tr = _private.titlebar_radius,
-					bl = 4,
-					br = 4,
+					bl = _private.bottom_rounding_radius,
+					br = _private.bottom_rounding_radius,
 				}
 			end
 		end)
@@ -986,8 +988,8 @@ function nice.initialize(args)
             c.shape = shapes.rounded_rect {
                 tl = _private.titlebar_radius,
                 tr = _private.titlebar_radius,
-                bl = 4,
-                br = 4,
+                bl = _private.bottom_rounding_radius,
+                br = _private.bottom_rounding_radius,
             }
         end)
 end

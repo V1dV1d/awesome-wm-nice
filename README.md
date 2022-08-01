@@ -112,6 +112,7 @@ Below you will find further details explaining the configuration parameters for 
 | --------------------- | :--: | ----------- | ------------------- |
 | `titlebar_height`       | integer | The height of the titlebar | `38`                  |
 | `titlebar_radius`       | integer | The radius of the top left and top right corners of the titlebar. Should be `>= 3` and `<= titlebar_height` | `9`                   |
+| `bottom_rounding_radius`| integer | The radius of the bottom left and bottom right corners of the window | `4` |
 | `titlebar_color`        | string | The default color of the titlebar and window decorations. Should be a hex color string | `"#1e1e24"`         |
 | `titlebar_padding_left` | integer | The padding on the left side of the titlebar | `0`                   |
 | `titlebar_padding_right` | integer | The padding on the right side of the titlebar | `0`                   |
