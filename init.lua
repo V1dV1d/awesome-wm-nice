@@ -858,6 +858,31 @@ function _private.add_window_decorations(c)
             end)
     end
 
+	-- no rounded corners when fullscreened
+	c:connect_signal(
+		"property::fullscreen", function()
+			if c.fullscreen then
+				local curr_screen = client.focus.screen.geometry
+				awful.titlebar.hide(c)
+				c.shape = nil
+				c:geometry{
+					x = curr_screen.x,
+					y = curr_screen.y,
+					width = curr_screen.width,
+					height = curr_screen.height,
+				}
+			else
+				awful.titlebar.show(c)
+				-- Shape the client
+				c.shape = shapes.rounded_rect {
+					tl = _private.titlebar_radius,
+					tr = _private.titlebar_radius,
+					bl = 4,
+					br = 4,
+				}
+			end
+		end)
+
     -- Clean up
     collectgarbage("collect")
 end
